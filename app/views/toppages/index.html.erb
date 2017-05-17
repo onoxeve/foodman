@@ -1,10 +1,8 @@
-<% content_for :cover do %>
-  <div class="cover">
-    <div class="cover-inner">
-      <div class="cover-contents">
-        <h1>Good Morning xx san</h1>
-        <a href="" class="btn btn-success btn-lg">test</a>
-      </div>
-    </div>
-  </div>
+<% if logged_in? %>
+  <%= bootstrap_form_for(@food) do |f| %>
+    <%= f.file_field :image %>
+    <%= f.submit 'Upload'%>
+  <% end %>
 <% end %>
+
+<%= render 'foods/foods', foods: @foods%>
