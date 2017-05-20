@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     password = params[:session][:password]
     if login(email, password)
       flash[:success] = 'Welcome to Foodman!'
-      redirect_to @user
+      redirect_to root_path
     else
       flash.now[:danger] = 'Sorry, your password was incorrect. Please double-check your password.'
       render 'new'
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    flash[:success] = 'You have successfully logged out'
+    flash[:success] = 'You have successfully logged out.'
     redirect_to root_path
   end
 

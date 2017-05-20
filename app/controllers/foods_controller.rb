@@ -6,43 +6,24 @@ class FoodsController < ApplicationController
   end
   
   def create
-=begin
-    # 内部DBに画像を保存する
-    food_image = food_params[:image]
-    food = {}
-    if food_image != nil
-      food[:image] = food_image.read
-    end
-=end
-
-=begin
-    if @food = Food.create!(food_params)
-      #FoodChannel.broadcast 'food_channel', food: render_food(@food)
-      FoodChannel.broadcast_to @food, foods: render_food(@food)
-    end
-  end
-=end
-  
-#=begin
-    @food = Food.new(food_params)
+    @food = current_user.foods.build(food_params)
     if @food.save
-      #ActionCable.server.broadcast "food_channel", food: render_food(food)
-      #lash[:success] = 'OKとりあえずトップページ(あとで修正)'
-      #FoodChannel.broadcast_to 'toppages/index', user: current_user
-      #redirect_to root_path
+      # model側で以下を実行
+      # after_create_commit { FoodBroadcastJob.perform_later self }
     else
-      flash[:danger] = 'NGとりあえずトップページ(あとで修正)'
-      #redirect_to root_path
-    end 
+      flash[:danger] = 'Sorry, please try again later.'
+      redirect_to root_path
+    end
   end
-#=end
 
   def show
-    @food = Food.find(params[:id])
-    #send_data @food.image, :type => 'image/png', :disposition => 'inline'
   end
 
   def destroy
+    @food = Food.find(params[:id])
+    @food.destroy
+    flash[:success] = 'You have successfully deleted the food.'
+    redirect_back(fallback_location: root_path)
   end
 
   private

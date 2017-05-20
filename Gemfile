@@ -59,3 +59,4 @@ gem 'jquery-rails'
 
 gem 'figaro'
 gem 'bootstrap_form'
+gem 'kaminari'

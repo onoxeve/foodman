@@ -7,14 +7,7 @@ App.food = App.cable.subscriptions.create "FoodChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
-    #$('#new_food').append data['food']
-    #alert data['message']
-    
-    #alert("test")
-    $('#new_food').prepend data['food']
-
-  speak: (message) ->
-    @perform 'speak' , message: message
+    $('#broadcast_food').prepend data['food']
 
   upload: (food) ->
-    @perform 'upload', food: food
+    # 後で利用するかも

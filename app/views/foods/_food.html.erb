@@ -4,6 +4,10 @@
       <div class="thumbnail">
         <%= image_tag food.image.to_s %>
       </div>
+      <div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+        <%# if current_user == micropost.user %>
+        <%= link_to "Delete", food, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger btn-xs'%>
+      </div>  
     </div>
   </div>
 </div>
