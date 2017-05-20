@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:show]
   
   def show
-    @user = User.find_by(name: params[:username])
+    @user = User.find_by(name: params[:id])
   end
 
   def new

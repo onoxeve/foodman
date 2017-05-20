@@ -1,8 +1,11 @@
 <% if logged_in? %>
-  <%= bootstrap_form_for(@food) do |f| %>
+  <%#= bootstrap_form_for(@food, data: { behavior: "food_uploader" }) do |f| %>
+  <%= form_for(@food, remote: true, html: {id: 'food_form'}) do |f| %>
     <%= f.file_field :image %>
     <%= f.submit 'Upload'%>
   <% end %>
 <% end %>
-
-<%= render 'foods/foods', foods: @foods%>
+<div class="row">
+  <div id="new_food"></div>
+  <%= render @foods %>
+</div>

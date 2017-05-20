@@ -5,4 +5,5 @@ class Food < ApplicationRecord
   validates :image, presence: true
 
   mount_uploader :image, ImageUploader
+  after_create_commit { FoodBroadcastJob.perform_later self }
 end

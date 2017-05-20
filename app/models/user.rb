@@ -6,4 +6,9 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   has_many :foods
+  
+  def to_param
+    name
+  end
+  
 end
