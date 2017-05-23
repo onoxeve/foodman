@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170517021902) do
+ActiveRecord::Schema.define(version: 20170520134815) do
 
   create_table "foods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "image"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 20170517021902) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_foods_on_user_id"
+  end
+
+  create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "user_id"
+    t.bigint "food_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["food_id"], name: "index_likes_on_food_id"
+    t.index ["user_id", "food_id"], name: "index_likes_on_user_id_and_food_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -29,4 +39,6 @@ ActiveRecord::Schema.define(version: 20170517021902) do
   end
 
   add_foreign_key "foods", "users"
+  add_foreign_key "likes", "foods"
+  add_foreign_key "likes", "users"
 end

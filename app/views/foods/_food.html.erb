@@ -1,13 +1,18 @@
 <div id="food-<%= food.id %>">
   <div class="photo">
-    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-      <div class="thumbnail">
-        <%= image_tag food.image.to_s %>
+    <div class="col-xs-4">
+      <div class="panel panel-default">
+        <div class="panel-body" >
+          <%= image_tag food.image.to_s, class: "img-responsive" %>
+        </div>
+        <div class="panel-footer">
+          <% if logged_in? %>
+            <%= render 'likes/likes', food: food %>
+            <%# if current_user == micropost.user %>
+            <%#= link_to "Delete", food, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger btn-xs' %>
+          <% end %>
+        </div>
       </div>
-      <div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
-        <%# if current_user == micropost.user %>
-        <%= link_to "Delete", food, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger btn-xs'%>
-      </div>  
     </div>
   </div>
 </div>

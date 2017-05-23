@@ -19,18 +19,45 @@ footer {
 .navbar-header img {
   margin-top: 20px;
   margin-bottom: 20px;
+  margin-left: 20px;
   height: 30px;
 }
 
-/* photo */
+#form_submit {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
-.photo .thumbnail {
+
+.user_profile .nav {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* photo 
+.photo .panel.panel-default {
+  width: 300px;
+  height: 360px;
+  background-color: #fff;
+  margin:auto;
+}
+
+.photo .panel-body {
   width: 300px;
   height: 300px;
   background-color: #fff;
+  margin:auto;
 }
 
-.photo .thumbnail img {
+.photo .panel-body img {
   height: 100%;
   width: 100%;
+  margin:auto;
 }
+
+.photo .panel-footer {
+  width: 300px;
+  height: 60px;
+  margin:auto;
+}
+*/

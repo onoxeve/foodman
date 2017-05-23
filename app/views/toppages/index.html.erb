@@ -1,8 +1,7 @@
 <% if logged_in? %>
-  <%#= bootstrap_form_for(@food, data: { behavior: "food_uploader" }) do |f| %>
   <%= form_for(@food, remote: true) do |f| %>
-    <%= f.file_field :image, accept: 'image/jpg,image/jpeg,image/png,image/gif' %>
-    <%= f.submit 'Upload'%>
+    <%= f.file_field :image, class: "filestyle", "data-buttonBefore": "true", accept: 'image/jpg,image/jpeg,image/png,image/gif' %>
+    <%= f.submit 'Upload food', class: 'btn btn-primary', id: "form_submit" %>
   <% end %>
 <% end %>
 <div class="row">
