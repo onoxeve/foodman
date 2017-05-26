@@ -31,7 +31,12 @@ footer {
 
 .user_profile .nav {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.form-buttons div,
+.form-buttons form {
+  display: inline
 }
 
 /* photo 

@@ -1,11 +1,15 @@
 <% if logged_in? %>
   <%= form_for(@food, remote: true) do |f| %>
     <%= f.file_field :image, class: "filestyle", "data-buttonBefore": "true", accept: 'image/jpg,image/jpeg,image/png,image/gif' %>
-    <%= f.submit 'Upload food', class: 'btn btn-primary', id: "form_submit" %>
+    <%= f.submit 'Upload', class: 'btn btn-primary', id: "form_submit" %>
   <% end %>
 <% end %>
 <div class="row">
-  <div id="broadcast_food"></div>
-  <%= render @foods %>
+  <div id='foods'>
+    <div id="broadcast_food"></div>
+    <div class='page'>
+      <%= render @foods %>
+    </div>
+  </div>
 </div>
 <%= paginate @foods %>

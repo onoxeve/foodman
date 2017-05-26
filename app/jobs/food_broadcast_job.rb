@@ -9,7 +9,7 @@ class FoodBroadcastJob < ApplicationJob
   
   def render_food(food)
     ApplicationController.render(
-      partial: 'foods/food',
+      partial: 'foods/food_cast',
       locals: { food: food }
     )
   end
