@@ -10,9 +10,10 @@
             <div id="like_button-<%= food.id %>">
               <%= render 'likes/like', food: food %>
             </div>
-            <div id="delete_button-<%= food.id %>">
-            <%= button_to food, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default btn-sm' do %>
-              <div class="glyphicon glyphicon-trash" aria-hidden="true"></div>
+            <% if current_user == food.user %>
+              <%= button_to food, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default btn-sm' do %>
+                <div class="glyphicon glyphicon-trash" aria-hidden="true"></div>
+            <% end %>
             <% end %>
             </div>
           </div>

@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
+// require jquery.turbolinks
 //= require rails-ujs
-//= require turbolinks
+// require turbolinks
 //= require_tree .
-//= require jquery.infinitescroll
+// require jquery.infinitescroll
