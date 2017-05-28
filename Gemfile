@@ -63,3 +63,6 @@ gem 'figaro'
 gem 'bootstrap_form'
 gem 'kaminari'
 gem 'jquery-turbolinks'
+
+gem 'devise'
+gem 'omniauth-facebook'

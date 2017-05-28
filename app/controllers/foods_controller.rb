@@ -1,5 +1,5 @@
 class FoodsController < ApplicationController
-  before_action :require_user_logged_in
+  before_action :authenticate_user!
   
   def new
     @food = Food.new

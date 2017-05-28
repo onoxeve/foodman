@@ -9,6 +9,11 @@
           <div class="form-buttons">
             <% if user_signed_in? %>
               <%= render 'likes/likes', food: food %>
+              <% if current_user == food.user %>
+                <%= button_to food, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default btn-sm' do %>
+                  <div class="glyphicon glyphicon-trash" aria-hidden="true"></div>
+                <% end %>
+              <% end %>
             <% end %>
           </div>
         </div>

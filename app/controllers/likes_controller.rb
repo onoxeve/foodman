@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  before_action :require_user_logged_in
+  before_action :authenticate_user!
 
   def create
     @food = Food.find(params[:food_id])

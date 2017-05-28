@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:show, :likes]
+  before_action :authenticate_user!, only: [:show, :likes]
   
   def show
     @user = User.find_by(name: params[:id])
-    @foods = @user.foods.order('created_at DESC').page(params[:page])
+    @user_foods = @user.foods.order('created_at DESC').page(params[:page])
     counts(@user)
+    #binding.pry
   end
 
   def new
@@ -25,7 +26,7 @@ class UsersController < ApplicationController
 
   def likes
     @user = User.find_by(name: params[:id])
-    @foods = @user.like_foods.page(params[:page])
+    @user_foods = @user.like_foods.page(params[:page])
     counts(@user)
   end
 
