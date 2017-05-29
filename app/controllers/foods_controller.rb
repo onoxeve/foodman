@@ -31,8 +31,4 @@ class FoodsController < ApplicationController
   def food_params
     params.require(:food).permit(:image)   
   end
-
-  def render_food(food)
-    render 'foods/food', food: @food
-  end
 end

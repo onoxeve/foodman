@@ -21,4 +21,8 @@ class ApplicationController < ActionController::Base
     @count_foods = user.foods.count
     @count_likes = user.likes.count
   end
+  
+  def like_counts(food)
+    @count_users = food.like_users.count
+  end
 end

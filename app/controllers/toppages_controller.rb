@@ -7,5 +7,8 @@ class ToppagesController < ApplicationController
        @user = current_user
     end
     #binding.pry
+    @foods.each do |food| 
+      like_counts(food)
+    end
   end
 end

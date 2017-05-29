@@ -3,16 +3,34 @@
     <div class="col-xs-12">
       <div class="panel panel-default">
         <div class="panel-body" >
-          <%= image_tag food.image.to_s, class: "img-responsive" %>
+          <%= image_tag food.image.thumb.url, class: "img-responsive" %>
         </div>
         <div class="panel-footer">
           <div class="form-buttons">
-            <% if user_signed_in? %>
+            <%# if user_signed_in? %>
               <%= render 'likes/likes', food: food %>
-            <% end %>
+            <%# end %>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal test -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Modal test</button>
+ 
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal タイトル</h4>
+      </div>
+      <div class="modal-body">Modal内容</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">閉じる</button>
+       </div>
     </div>
   </div>
 </div>

@@ -55,6 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # for upload
 gem 'carrierwave'
 gem 'fog-aws'
+gem 'rmagick'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
