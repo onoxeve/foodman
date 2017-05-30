@@ -96,6 +96,7 @@ footer {
 
 .food .like_counts {
   font-size: 15px;
+  position: relative; bottom:2.2px;
 }
 
 /*

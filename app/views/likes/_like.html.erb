@@ -1,5 +1,4 @@
 <%= button_to food_likes_path(food), method: :post, class: "btn btn-default btn-lg", remote: true do %>
   <div class="glyphicon glyphicon-heart-empty" aria-hidden="true"></div>
-  <span><%= like_counts %></span>
-  <%#= image_tag "icon_heart.svg", :width => "15", :height => "15" %>
+  <span class='like_counts'><%= like_counts %></span>
 <% end %>
