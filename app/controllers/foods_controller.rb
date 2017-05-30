@@ -8,7 +8,7 @@ class FoodsController < ApplicationController
   def create
     @food = current_user.foods.build(food_params)
     if @food.save
-      # model側で以下を実行
+      # Model側でコールバック関数呼び出し
       # after_create_commit { FoodBroadcastJob.perform_later self }
     else
       flash[:danger] = 'Sorry, please try again later.'

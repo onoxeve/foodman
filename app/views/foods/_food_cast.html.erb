@@ -8,7 +8,7 @@
         <div class="panel-footer">
           <div class="form-buttons">
             <div id="like_button-<%= food.id %>">
-              <%= render 'likes/like', food: food %>
+              <%= render 'likes/like', food: food, like_counts: food.like_users.count %>
             </div>
           </div>
           </div>

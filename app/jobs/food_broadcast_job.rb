@@ -10,7 +10,7 @@ class FoodBroadcastJob < ApplicationJob
   def render_food(food)
     ApplicationController.render(
       partial: 'foods/food_cast',
-      locals: { food: food }
+      locals: { food: food, like_counts: food.like_users.count }
     )
   end
 end
