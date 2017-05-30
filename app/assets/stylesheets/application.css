@@ -68,21 +68,37 @@ footer {
     text-align: left;
  }
 
-/* photo 
-.photo .panel.panel-default {
-  width: 300px;
-  height: 360px;
-  background-color: #fff;
-  margin:auto;
+/* Food */
+.food .panel.panel-default {
+  max-width: 600px; 
+  height: auto;
+  margin: 10px auto;
 }
 
-.photo .panel-body {
-  width: 300px;
-  height: 300px;
-  background-color: #fff;
-  margin:auto;
+.food .panel-body {
+  padding: 0;
 }
 
+.food .panel-footer {
+  height: 45.45px;
+  background-color: #fff;
+}
+
+.food .btn.btn-default {
+  border-color: #fff;
+  padding: 0;
+  color: #616161;
+}
+
+.glyphicon.glyphicon-heart {
+  color:#ff0080;
+}
+
+.food .like_counts {
+  font-size: 15px;
+}
+
+/*
 .photo .panel-body img {
   height: 100%;
   width: 100%;
