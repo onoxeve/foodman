@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   before_save { self.name.downcase! }
-  validates :name, presence: true, length: { maximum: 15 }, uniqueness: { case_sensitive: false }
+  validates :name, presence: true, length: { maximum: 15 }, uniqueness: { case_sensitive: false }, format: { with: /\A[a-z0-9]+\z/i, message: "is must NOT contain any other characters than alphanumerics." }
   #validates :email, presence: true, length: { maximum: 255 }, 
   #                  format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
   #                  uniqueness: { case_sensitive: false }
