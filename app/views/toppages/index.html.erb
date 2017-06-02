@@ -1,11 +1,12 @@
 <%# if user_signed_in? %>
   <%= form_for(@food, remote: true) do |f| %>
     <%= f.file_field :image, class: "filestyle", "data-buttonBefore": "true", "data-buttonName":"btn-primary",  accept: 'image/jpg,image/jpeg,image/png,image/gif' %>
-    <%= f.submit 'Upload', class: 'btn btn-primary', id: "form_submit" %>
+    <%= button_tag type: "submit", class: "btn btn-primary" do %>
+      <i class="fa fa-cloud-upload"></i> Upload
+    <% end %>
   <% end %>
 <%# end %>
 
 <div id="broadcast_food"></div>
 <%= render @foods %>
 <%= paginate @foods %>
-

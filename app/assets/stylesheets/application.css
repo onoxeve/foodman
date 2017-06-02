@@ -20,7 +20,7 @@ footer {
   height: 30px;
 }
 
-#form_submit {
+.new_food {
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -107,4 +107,3 @@ footer {
   padding: 0;
   margin: 0;
 }
-
