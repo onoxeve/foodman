@@ -4,7 +4,11 @@
     <div class="card">
       <div class="card-header text-center">
         <div>Login to Foodman.</div>
-        <div><%= link_to "Sign up / Sign in with Facebook", user_facebook_omniauth_authorize_path, class: 'btn btn-lg btn-primary'%></div>
+        <div>
+          <%= link_to user_facebook_omniauth_authorize_path, class: 'btn btn-lg btn-primary' do %>
+            <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i> Log in with Facebook
+          <% end %>
+        </div>
         <div class="line">OR</div>
       </div>
       <div class="card-block">

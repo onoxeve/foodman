@@ -20,16 +20,42 @@ footer {
   height: 30px;
 }
 
+/* upload */
 .new_food {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.user_profile {
+.new_food .form-control {
+  margin-left: 10px;
+}
+
+/* user */
+.user_food {
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
+.user_profile div,
+.user_profile form {
+  display: inline
+}
+
+.user_profile {
+  margin-top: 15px;
+}
+
+.user_profile .btn {
+  color: #4b514e;
+  border-color: #dbdbdb;
+  box-shadow: none;
+  padding: 5px 5px;
+}
+
+.user_profile .user_name {
+  font-size: 1.25rem;
+  font-family: Roboto, sans-serif;
+}
 
 .nav-tabs {
   background-color: #f2f2f2;
@@ -54,6 +80,7 @@ footer {
   color: #4b514e;
 }
 
+/* Form */
 .form-buttons div,
 .form-buttons form {
   display: inline
