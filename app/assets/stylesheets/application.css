@@ -1,9 +1,5 @@
 @charset "utf-8";
 
-/*
- *= require rails_bootstrap_forms
- */
-
 /* body */
 body {
   background: #f2f2f2;
@@ -16,6 +12,7 @@ footer {
 .navbar {
   background-color: #fff;
 }
+
 .navbar-header img {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -28,10 +25,33 @@ footer {
   margin-bottom: 10px;
 }
 
-
-.user_profile .nav {
-  margin-top: 10px;
+.user_profile {
+  margin-top: 15px;
   margin-bottom: 15px;
+}
+
+
+.nav-tabs {
+  background-color: #f2f2f2;
+  border-top-color: #f2f2f2;
+  border-left-color: #f2f2f2;
+  border-right-color: #f2f2f2;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #f2f2f2;
+  border-top-color: #f2f2f2;
+  border-left-color: #f2f2f2;
+  border-right-color: #f2f2f2;
+  border-bottom: solid 3px #0275d8;
+}
+
+.nav-tabs .nav-link.active .nav_link_color {
+  color: #0275d8;
+}
+
+.nav-tabs .nav_link_color {
+  color: #4b514e;
 }
 
 .form-buttons div,
@@ -39,7 +59,7 @@ footer {
   display: inline
 }
 
-/*flash*/
+/* Flash */
 .alert-error {
     background-color: #f2dede;
     border-color: #eed3d7;
@@ -69,46 +89,22 @@ footer {
  }
 
 /* Food */
-.food .panel.panel-default {
-  max-width: 600px; 
-  height: auto;
-  margin: 10px auto;
-}
 
-.food .panel-body {
-  padding: 0;
-}
-
-.food .panel-footer {
-  height: 45.45px;
-  background-color: #fff;
-}
-
-.food .btn.btn-default {
-  border-color: #fff;
-  padding: 0;
-  color: #616161;
-}
-
-.glyphicon.glyphicon-heart {
-  color:#ff0080;
-}
-
-.food .like_counts {
-  font-size: 15px;
-  position: relative; bottom:2.2px;
-}
-
-/*
-.photo .panel-body img {
-  height: 100%;
+.food .card {
   width: 100%;
-  margin:auto;
+  max-width: 600px;
+  margin: 1em auto;
+  height: auto;
 }
 
-.photo .panel-footer {
-  width: 300px;
-  height: 60px;
-  margin:auto;
+.food .card-block {
+   padding: 10px;
+ }
+
+.food .card-block .btn-outline-danger {
+  border-style: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
 }
-*/
+

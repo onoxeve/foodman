@@ -1,16 +1,16 @@
 <div id="food-<%= food.id %>">
   <div class="food">
-    <div class="col-xs-12">
-      <div class="panel panel-default">
-        <div class="panel-body" >
+    <div class="card-deck">
+      <div class="card"> 
+        <div class="card-img-top" >
           <%= image_tag food.image.thumb.url, class: "img-responsive" %>
         </div>
-        <div class="panel-footer">
-          <div class="form-buttons">
-            <%# if user_signed_in? %>
-              <%= render 'likes/likes', food: food, like_counts: food.like_users.count %>
-            <%# end %>
-          </div>
+        <div class="card-block">
+        <div class="form-buttons">
+        <div id="like_button-<%= food.id %>">
+          <%= render 'likes/likes', food: food, like_counts: food.like_users.count %>
+        </div>
+        </div>
         </div>
       </div>
     </div>

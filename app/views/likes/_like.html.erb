@@ -1,4 +1,4 @@
-<%= button_to food_likes_path(food), method: :post, class: "btn btn-default btn-lg", remote: true do %>
-  <div class="glyphicon glyphicon-heart-empty" aria-hidden="true"></div>
+<%= button_to food_likes_path(food), method: :post, class: "btn btn-outline-danger", remote: true do %>
+  <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
   <span class='like_counts'><%= like_counts %></span>
 <% end %>

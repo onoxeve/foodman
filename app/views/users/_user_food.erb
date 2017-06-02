@@ -1,19 +1,21 @@
 <div id="food-<%= food.id %>">
   <div class="food">
-    <div class="col-xs-12">
-      <div class="panel panel-default">
-        <div class="panel-body" >
+    <div class="card-deck">
+      <div class="card"> 
+        <div class="card-img-top" >
           <%= image_tag food.image.thumb.url, class: "img-responsive" %>
         </div>
-        <div class="panel-footer">
-          <div class="form-buttons">
-            <%= render 'likes/likes', food: food, like_counts: food.like_users.count %>
-            <% if current_user == food.user %>
-              <%= button_to food, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default btn-sm' do %>
-                <div class="glyphicon glyphicon-trash" aria-hidden="true"></div>
-              <% end %>
-            <% end %>
-          </div>
+        <div class="card-block">
+        <div class="form-buttons">
+        <div id="like_button-<%= food.id %>">
+          <%= render 'likes/likes', food: food, like_counts: food.like_users.count %>
+        </div>
+        <% if current_user == food.user %>
+          <%= button_to food, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-outline-danger' do %>
+            <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+          <% end %>
+        <% end %>
+        </div>
         </div>
       </div>
     </div>
