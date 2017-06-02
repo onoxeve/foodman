@@ -1,11 +1,12 @@
 <header>
-  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <nav class="navbar navbar-toggleable-xl navbar-light bg-faded">
+    <div class="container">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbar-brand" href="/">Foodman
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav justify-content-end">
+      <div class="navbar-nav ml-auto">
         <% if user_signed_in? %>
           <%= link_to current_user.name, user_path(current_user), class: "nav-item nav-link" %>
           <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "nav-item nav-link" %>
@@ -14,6 +15,7 @@
           <%= link_to 'Sign up', new_user_registration_path, class: "nav-item nav-link" %>
         <% end %>
       </div>
+    </div>
     </div>
   </nav>
 </header>

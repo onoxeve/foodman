@@ -1,11 +1,16 @@
 <div class="row">
-  <div class="col-xs-offset-2 col-xs-8">
-    <div class="panel panel-primary">
-      <div class="panel-heading">Log in</div>
-      <div class="panel-body">
+  <div class="offset-2 col-8">
+    <div class="sign_in_form">
+    <div class="card">
+      <div class="card-header text-center">
+        <div>Login to Foodman.</div>
+        <div><%= link_to "Sign up / Sign in with Facebook", user_facebook_omniauth_authorize_path, class: 'btn btn-lg btn-primary'%></div>
+        <div class="line">OR</div>
+      </div>
+      <div class="card-block">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
-            
+
           <div class="form-group">
             <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: "Email" %>
           </div>
@@ -24,10 +29,9 @@
         <% end %>
       </div>
     </div>
+    </div>
   </div>
-  <div class="col-xs-offset-2 col-xs-8">
-    <%= link_to "Sign up / Sign in with Facebook", user_facebook_omniauth_authorize_path, class: 'btn btn-lg btn-primary'%>
-  </div>
-    
 </div>
+
+
 <%#= render "devise/shared/links" %>
