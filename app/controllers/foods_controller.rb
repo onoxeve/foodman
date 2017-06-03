@@ -1,5 +1,6 @@
 class FoodsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:destroy, :new]
+  before_action :user_signed_in, only: :create
   
   def new
     @food = Food.new
@@ -30,5 +31,11 @@ class FoodsController < ApplicationController
 
   def food_params
     params.require(:food).permit(:image)   
+  end
+
+  def user_signed_in
+    unless user_signed_in?
+      render 'foods/upload'
+    end
   end
 end
