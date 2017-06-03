@@ -30,7 +30,7 @@ footer {
   margin-left: 10px;
 }
 
-/* user */
+/* User show */
 .user_food {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -54,7 +54,32 @@ footer {
 
 .user_profile .user_name {
   font-size: 1.25rem;
-  font-family: Roboto, sans-serif;
+  font-weight: 300;
+}
+
+/* User Edit */
+.edit_user {
+  margin-top: 15px;
+  color: #999;
+  font-weight: 600;
+}
+
+.edit_user .card-footer {
+  padding-bottom: 11px;
+}
+
+/* Sign in / up */
+.sign_in_form .card-header {
+  color: #999;
+  font-weight: 600;
+}
+
+.sign_in_form {
+  margin-top: 30px;
+}
+
+.sign_in_form .line {
+  margin-top: 10px;
 }
 
 /* User navbar */
@@ -73,11 +98,14 @@ footer {
   border-bottom: solid 3px #0275d8;
 }
 
+.nav-tabs .nav-link.active {
+  color: #0275d8;
+}
 .nav-tabs .nav-link.active .nav_link_color {
   color: #0275d8;
 }
 
-.nav-tabs .nav_link_color {
+.nav-tabs .nav_link_color  {
   color: #4b514e;
 }
 
@@ -184,16 +212,3 @@ footer {
   font-size: 20px !important;
 }
 
-/* Sign in / up */
-.sign_in_form .card-header {
-  color: #999;
-  font-weight: 600;
-}
-
-.sign_in_form {
-  margin-top: 30px;
-}
-
-.sign_in_form .line {
-  margin-top: 10px;
-}

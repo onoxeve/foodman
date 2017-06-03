@@ -6,20 +6,18 @@
       </div>
       <div>
         <%= button_to edit_user_registration_path(@user), method: :get, class: "btn btn-outline-primary btn-sm" do %>
-          <i class="fa fa-cog" aria-hidden="true"></i> Edit
+          <i class="fa fa-cog" aria-hidden="true"></i> Edit Profile
         <% end %>
       </div>
     </div>
     <div class="user_food">
       <ul class="nav nav-tabs nav-justified">
         <li class="nav-item nav-link <%= 'active' if current_page?(user_path(@user)) %>">
-          <%= link_to user_path(@user), class: "nav_link_color" do %>Foods
-            <span class="badge badge-primary"><%= @count_foods %></span>
+          <%= @count_foods %> <%= link_to user_path(@user), class: "nav_link_color" do %>Foods
           <% end %>
         </li>
         <li class="nav-item nav-link <%= 'active' if current_page?(likes_user_path(@user)) %>">
-          <%= link_to likes_user_path(@user), class: "nav_link_color" do %>Likes
-            <span class="badge badge-primary"><%= @count_likes %></span>
+          <%= @count_likes %> <%= link_to likes_user_path(@user), class: "nav_link_color" do %>Likes
           <% end %>
         </li>
       </ul>
