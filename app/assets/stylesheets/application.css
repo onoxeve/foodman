@@ -57,6 +57,7 @@ footer {
   font-family: Roboto, sans-serif;
 }
 
+/* User navbar */
 .nav-tabs {
   background-color: #f2f2f2;
   border-top-color: #f2f2f2;
@@ -78,6 +79,36 @@ footer {
 
 .nav-tabs .nav_link_color {
   color: #4b514e;
+}
+
+/* Modal */
+
+.modal-body .log_in_fa {
+  margin-bottom: 5px;
+}
+
+.modal-dialog {
+  margin: auto;
+  color: #999;
+  font-weight: 600;
+}
+
+.modal-body .line_block {
+  clear: both;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-top: solid 1px #ccc;
+  text-align: center;
+}
+
+.modal-body .line_text {
+  position: relative;
+  top: -10px;
+  display: inline-block;
+  padding: 0 10px;
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 1.3;
 }
 
 /* Form */

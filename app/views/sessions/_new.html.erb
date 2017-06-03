@@ -1,40 +1,35 @@
-<div class="row">
-  <div class="col-md-6 offset-md-3 col-12">
-    <div class="sign_in_form">
-    <div class="card">
-      <div class="card-header text-center">
-        <div>Sign up to see Food from people all over the world.</div>
-        <div>
-          <%= link_to user_facebook_omniauth_authorize_path, class: 'btn btn-lg btn-primary' do %>
-            <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i> Sign up with Facebook
-          <% end %>
-        </div>
-        <div class="line">OR</div>
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="modal-title" id="exampleModalLabel">
+        Please sign up or log in to use this feature.
       </div>
-      <div class="card-block">
-
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body text-center">
+       <div class="sign_up">
+        <%= link_to new_user_registration_path, class: 'btn btn-lg btn-cyan btn-block' do %>
+          <i class="fa fa-sign-in fa-2x" aria-hidden="true"></i> Sign up
+        <% end %>
+      </div>
+      <div class="line_block">
+        <div class="line_text">OR</div>
+      </div>
+      <div class="log_in_fa">
+        <%= link_to user_facebook_omniauth_authorize_path, class: 'btn btn-lg btn-primary btn-block' do %>
+          <i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i> Log in with Facebook
+        <% end %>
+      </div>
+      <div class="log_in_mail">
+        <%= link_to new_user_session_path, class: 'btn btn-lg btn-cyan btn-block' do %>
+          <i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i> Log in with Email
+        <% end %>
       </div>
     </div>
-    </div>
-   </div>
-</div>
-
-<!-- Modal -->
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-mdb" data-dismiss="modal">Close</button>
     </div>
   </div>
 </div>
