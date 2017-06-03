@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
   #before_action :authenticate_user!
-  before_action :redirect_sign_in
+  before_action :user_signed_in
 
   def create
     @food = Food.find(params[:food_id])
@@ -17,7 +17,7 @@ class LikesController < ApplicationController
   
   private
   
-  def redirect_sign_in
+  def user_signed_in
     unless user_signed_in?
       render 'likes/likes'
     end
