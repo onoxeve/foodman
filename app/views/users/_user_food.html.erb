@@ -11,10 +11,12 @@
           <%= render 'likes/likes', food: food, like_counts: food.like_users.count %>
         </div>
         <% if current_user == food.user %>
+        <div class="trash">
           <%= button_to food, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-outline-danger' do %>
             <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
           <% end %>
         <% end %>
+        </div>
         </div>
         </div>
       </div>

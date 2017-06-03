@@ -117,6 +117,10 @@ footer {
   display: inline
 }
 
+.food .trash {
+  float: right;
+}
+
 /* Flash */
 .alert-error {
     margin-top: 10px;
@@ -164,10 +168,20 @@ footer {
  }
 
 .food .card-block .btn-outline-danger {
+  color: #262626 !important;
   border-style: none;
   box-shadow: none;
   padding: 0;
   margin: 0;
+}
+
+.fa-heart:before {
+  color: #ED4956 !important;
+  font-size: 20px !important;
+}
+
+.fa-heart-o:before {
+  font-size: 20px !important;
 }
 
 /* Sign in / up */
