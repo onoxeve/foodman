@@ -10,8 +10,8 @@ class User < ApplicationRecord
   #                  format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
   #                  uniqueness: { case_sensitive: false }
   #has_secure_password
-  has_many :foods
-  has_many :likes
+  has_many :foods, dependent: :destroy
+  has_many :likes, dependent: :destroy
   has_many :like_foods, through: :likes, source: :food
 
   # URLを/:usernameに変更
