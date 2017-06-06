@@ -90,5 +90,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
   # For AWS
-  config.action_cable.allowed_request_origins = [ /https?:\/\/.*/ ]
+  config.action_cable.url = 'ws://http://foodman-dev.us-west-2.elasticbeanstalk.com/cable'
+  config.action_cable.allowed_request_origins = ['http://foodman-dev.us-west-2.elasticbeanstalk.com/']
 end
