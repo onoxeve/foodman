@@ -19,13 +19,13 @@ default: &default
 
 development:
   <<: *default
-  #database: foodman_development
-  socket: /tmp/mysql.sock
-  database: <%= ENV['RDS_DB_NAME'] %>
-  username: <%= ENV['RDS_USERNAME'] %>
-  password: <%= ENV['RDS_PASSWORD'] %>
-  host: <%= ENV['RDS_HOSTNAME'] %>
-  port: <%= ENV['RDS_PORT'] %>
+  database: foodman_development
+  #socket: /tmp/mysql.sock
+  #database: <%= ENV['RDS_DB_NAME'] %>
+  #username: <%= ENV['RDS_USERNAME'] %>
+  #password: <%= ENV['RDS_PASSWORD'] %>
+  #host: <%= ENV['RDS_HOSTNAME'] %>
+  #port: <%= ENV['RDS_PORT'] %>
 
 
 # Warning: The database defined as "test" will be erased and
@@ -56,6 +56,12 @@ test:
 #
 production:
   <<: *default
-  database: foodman_production
-  username: foodman
-  password: <%= ENV['FOODMAN_DATABASE_PASSWORD'] %>
+  #database: foodman_production
+  #username: foodman
+  #password: <%= ENV['FOODMAN_DATABASE_PASSWORD'] %>
+  socket: /tmp/mysql.sock
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
