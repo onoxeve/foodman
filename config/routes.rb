@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root to: 'toppages#index'
 
+  mount ActionCable.server => '/cable'
+
   #get 'login', to: 'sessions#new'
   #post 'login', to: 'sessions#create'
   #delete 'logout', to: 'sessions#destroy'
