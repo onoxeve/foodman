@@ -1,7 +1,7 @@
 <div id="food-<%= food.id %>">
   <div class="food">
     <div class="card-deck">
-      <div class="card"> 
+      <div class="card">
         <div class="card-img-top" >
           <%= image_tag food.image.thumb.url, class: "img-responsive" %>
         </div>
@@ -9,6 +9,13 @@
         <div class="form-buttons">
         <div id="like_button-<%= food.id %>">
           <%= render 'likes/likes', food: food, like_counts: food.like_users.count %>
+        </div>
+        <% if current_user && current_user.admin? %>
+        <div class="trash">
+          <%= button_to food, method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-outline-danger' do %>
+            <i class="fa fa-trash-o fa-2x" aria-hidden="true"></i>
+          <% end %>
+        <% end %>
         </div>
         </div>
         </div>

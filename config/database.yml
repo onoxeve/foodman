@@ -20,6 +20,8 @@ default: &default
 development:
   <<: *default
   database: foodman_development
+  host: db
+  password: mariadb
   #socket: /tmp/mysql.sock
   #database: <%= ENV['RDS_DB_NAME'] %>
   #username: <%= ENV['RDS_USERNAME'] %>
