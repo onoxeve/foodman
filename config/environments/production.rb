@@ -88,8 +88,24 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  
+
   # For AWS
   #config.action_cable.url = 'ws://http://foodman-dev.us-west-2.elasticbeanstalk.com/cable'
   config.action_cable.allowed_request_origins = [ /(http|https):\/\/.*/ ]
+
+  # for sending mail
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => 'email-smtp.us-west-2.amazonaws.com',
+    :port => 587,
+    :authetication => :login,
+    :user_name => ENV['ses_api_key'],
+    :domain => "localhost:3000",
+    :password => ENV['ses_api_secret'],
+    #:ssl => true,
+    #:tls => true,
+    :enable_starttls_auto => true,
+  }
 end
