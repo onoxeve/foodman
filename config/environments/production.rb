@@ -45,7 +45,7 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -91,7 +91,7 @@ Rails.application.configure do
 
   # For AWS
   #config.action_cable.url = 'ws://http://foodman-dev.us-west-2.elasticbeanstalk.com/cable'
-  config.action_cable.allowed_request_origins = [ /(http|https):\/\/.*/ ]
+  config.action_cable.allowed_request_origins = [ /(http|https):\/\/.*\.foodman\.io/ ]
 
   # for sending mail
   config.action_mailer.raise_delivery_errors = true
