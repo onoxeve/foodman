@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <%= render 'layouts/meta_tags' %>
+  <%= favicon_link_tag 'favicon.ico' %>
 
   <body>
     <%= render 'layouts/navbar' %>
@@ -8,7 +9,7 @@
     <div class="container">
       <%= render 'layouts/flash_messages' %>
       <div id="log_in_modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
-      <%= yield %> 
+      <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
   </body>
