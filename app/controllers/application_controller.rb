@@ -10,18 +10,22 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:account_update, keys: [:name])
     end
 
+    def after_sign_in_path_for(resource)
+      root_path
+    end
+
   private
   def require_user_logged_in
     unless logged_in?
       redirect_to login_url
     end
   end
-  
+
   def counts(user)
     @count_foods = user.foods.count
     @count_likes = user.likes.count
   end
-  
+
   #def like_counts(food)
   #  @like_counts = food.like_users.count
   #end
