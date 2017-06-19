@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   before_save { self.name.downcase! }
+  before_save { self.name.gsub!(" ", "") }
   validates :name, presence: true, length: { maximum: 15 }, uniqueness: { case_sensitive: false }, format: { with: /\A[a-z0-9]+\z/i, message: "is must NOT contain any other characters than alphanumerics." }
   #validates :email, presence: true, length: { maximum: 255 },
   #                  format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
@@ -45,11 +46,33 @@ class User < ApplicationRecord
     end
   end
 
+  def self.find_omniauth(auth)
+    User.where(provider: auth.provider, uid: auth.uid).first
+  end
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
       end
+      if data = session["devise.facebook_data"]
+        user.provider = data["provider"] if user.provider.blank?
+        user.uid = data["uid"] if user.uid.blank?
+        user.password = Devise.friendly_token[0,20] if user.password.blank?
+      end
     end
+  end
+  # allow users to update their accounts without passwords
+  def update_without_current_password(params, *options)
+    params.delete(:current_password)
+
+    if params[:password].blank? && params[:password_confirmation].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation)
+    end
+
+    result = update_attributes(params, *options)
+    clean_up_passwords
+    result
   end
 end

@@ -82,6 +82,20 @@ footer {
   margin-top: 10px;
 }
 
+.forgot_password {
+  color: #999;
+}
+
+.log_in {
+  margin-bottom: 10px;
+}
+
+.remember_me_label {
+  color: #999;
+  font-weight: 400;
+  margin-bottom: 0px;
+}
+
 /* User navbar */
 .nav-tabs {
   background-color: #f2f2f2;
@@ -211,4 +225,3 @@ footer {
 .fa-heart-o:before {
   font-size: 20px !important;
 }
-
