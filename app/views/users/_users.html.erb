@@ -4,11 +4,13 @@
       <div class="user_name">
         <%= @user.name %>
       </div>
+      <% if current_user.name == @user.name %>
       <div>
         <%= button_to edit_user_registration_path(@user), method: :get, class: "btn btn-outline-primary btn-sm" do %>
           <i class="fa fa-cog" aria-hidden="true"></i> Edit Profile
         <% end %>
       </div>
+      <% end %>
     </div>
     <div class="user_food">
       <ul class="nav nav-tabs nav-justified">

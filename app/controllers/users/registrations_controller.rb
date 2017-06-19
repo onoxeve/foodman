@@ -26,10 +26,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
    else
      clean_up_passwords resource
      set_minimum_password_length
-     #render 'devise/registrations/finish_signup'
      @request_referer = request.referer
-     if @request_referer.index("facebook")
+     if @request_referer.include?("facebook")
        render 'devise/registrations/after_omniauth_signup'
+     #elsif @request_referer.end_with?("users")
+     # render 'devise/registrations/after_omniauth_signup'
      else
        respond_with resource
      end
