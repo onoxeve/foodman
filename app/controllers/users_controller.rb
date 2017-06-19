@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:show, :likes]
-  
+
   def show
     @user = User.find_by(name: params[:id])
-    @user_foods = @user.foods.order('created_at DESC').page(params[:page])
+    @user_foods = @user.foods.order('created_at DESC').page(params[:page]).per(10)
     counts(@user)
     #binding.pry
   end
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   def likes
     @user = User.find_by(name: params[:id])
-    @user_foods = @user.like_foods.page(params[:page])
+    @user_foods = @user.like_foods.page(params[:page]).per(10)
     counts(@user)
   end
 

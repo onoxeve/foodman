@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   before_save { self.name.downcase! }
   validates :name, presence: true, length: { maximum: 15 }, uniqueness: { case_sensitive: false }, format: { with: /\A[a-z0-9]+\z/i, message: "is must NOT contain any other characters than alphanumerics." }
-  #validates :email, presence: true, length: { maximum: 255 }, 
+  #validates :email, presence: true, length: { maximum: 255 },
   #                  format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
   #                  uniqueness: { case_sensitive: false }
   #has_secure_password
@@ -32,13 +32,14 @@ class User < ApplicationRecord
     self.like_foods.include?(food)
   end
 
-  # For Dvise
+  # For Devise
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      #binding.pry
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
       user.name = auth.info.name   # assuming the user model has a name
-      # If you are using confirmable and the provider(s) you use validate emails, 
+      # If you are using confirmable and the provider(s) you use validate emails,
       # uncomment the line below to skip the confirmation emails.
       # user.skip_confirmation!
     end
