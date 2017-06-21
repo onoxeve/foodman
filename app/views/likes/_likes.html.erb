@@ -1,11 +1,9 @@
-<div id="like_button-<%= food.id %>">
-  <% if user_signed_in? %>
-    <% if current_user.like?(food) %>
-      <%= render 'likes/unlike', food: food, like_counts: like_counts %>
-    <% else %>
-      <%= render 'likes/like', food: food, like_counts: like_counts %>
-    <% end %>
+<% if user_signed_in? %>
+  <% if current_user.like?(food) %>
+    <%= render 'likes/unlike', food: food, like_counts: like_counts %>
   <% else %>
-      <%= render 'likes/like', food: food, like_counts: like_counts %>
+    <%= render 'likes/like', food: food, like_counts: like_counts %>
   <% end %>
-</div>
+  <% else %>
+    <%= render 'likes/like', food: food, like_counts: like_counts %>
+<% end %>
