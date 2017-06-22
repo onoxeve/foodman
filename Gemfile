@@ -53,18 +53,18 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+### Original Gem ###
+
+# Use jquery as the JavaScript library(for bootstrap filestyle)
+gem 'jquery-rails'
+
 # for upload
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'rmagick'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-
 gem 'figaro'
-gem 'bootstrap_form'
 gem 'kaminari'
-gem 'jquery-turbolinks'
 
 gem 'devise'
 gem 'omniauth-facebook'
